@@ -23,7 +23,6 @@ data = {
     "Minutos Totais": [40, 40, 58.33, 19],
     "Total de Passes": [10, 30, 24, 11],
     "Passes por 90 min": [22.5, 67.5, 37.0, 52.1],
-    "Janela Ativa": ["0:18 até 36:47 (36,5 min)", "2:56 até 39:33 (36,6 min)", "0:13 até 57:16 (57,0 min)", "3:10 até 22:07 (19,0 min)"],
     "Minutos Ativos": [8, 21, 21, 10],
     "% Participação": [20.0, 52.5, 36.2, 52.6]
 }
@@ -98,8 +97,3 @@ with col_right:
 st.subheader("⏱️ Detalhes de Minutagem Ativa")
 cols = st.columns(len(display_df))
 
-for i, row in display_df.iterrows():
-    with cols[i % len(display_df)]:
-        st.info(f"**{row['Partida']}**\n\nMinutos Ativos: {row['Minutos Ativos']} de {row['Minutos Totais']}")
-
-st.caption("*Janela de Participação Ativa: Tempo decorrido entre o primeiro e o último passe registrado.*")
