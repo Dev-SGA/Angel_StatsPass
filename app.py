@@ -503,7 +503,7 @@ all_games_duration = sum(match_durations.values())
 st.sidebar.header("📋 Filter Configuration")
 selected_match = st.sidebar.radio("Select a match", list(full_data.keys()), index=0)
 
-st.sidebar.divider()
+st.sidebar.markdown("---")
 
 # O NOVO SLICER (Filtro de passes para frente)
 apenas_frente = st.sidebar.checkbox("Show only forward passes", value=False)
@@ -534,19 +534,19 @@ with col_stats:
     c2.metric("Succesful", stats["certo"])
     c3.metric("%", f'{stats["acc"]:.1f}%')
     
-    st.divider()
+    st.markdown("---")
     st.subheader("🚀 Progressive Passes")
     p1, p2 = st.columns(2)
     p1.metric("Attempts", stats["prog_tent"])
     p2.metric("Successful", stats["prog_acer"])
     
-    st.divider()
+    st.markdown("---")
     st.subheader("🎯 Passes into the Final Third")
     f1, f2 = st.columns(2)
     f1.metric("Attempts", stats["tf_tent"])
     f2.metric("Sucessful", stats["tf_acer"])
     
-    st.divider()
+    st.markdown("---")
     st.subheader("↕️ Direction")
     d1, d2, d3 = st.columns(3)
     d1.metric("Forward", stats["fwd"])
@@ -563,7 +563,7 @@ with col_map:
 # ============================================================
 # SEÇÃO DE ESTATÍSTICAS DETALHADAS
 # ============================================================
-st.divider()
+st.markdown("---")
 st.header("📈 Detailed Statistics")
 
 # Função para criar a tabela de estatísticas por partida
@@ -639,7 +639,7 @@ df_participation_table = build_participation_table()
 st.dataframe(df_participation_table, use_container_width=True, hide_index=True)
 
 # Resumo Geral
-st.divider()
+st.markdown("---")
 st.subheader("📊 Overall Averages")
 
 # Calcular médias
