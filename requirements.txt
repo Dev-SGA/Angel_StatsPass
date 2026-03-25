@@ -1,7 +1,6 @@
-numpy
-pandas
 streamlit
-mplsoccer
+pandas
+numpy
 matplotlib
+mplsoccer
 Pillow
-altair==4.2.2
